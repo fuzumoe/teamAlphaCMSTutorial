@@ -1,0 +1,90 @@
+<div class="modal fade  ">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header"> <button type="button" class="close" ng-click="close()" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <div class="modal-title">
+                    <span class=" pull-left">
+                    <i class=" hidden-sm hidden-xs fa fa-file-o fa-4x" aria-hidden="true"></i> </span>
+                    <h2 class="hidden-sm hidden-xs text-center">{{title}}</h2>
+
+                    <i class="hidden-lg hidden-md fa fa-file-o fa-2x" aria-hidden="true"></i> </span>
+                    <h5 class="hidden-lg hidden-md  text-center">{{title}}</h5>
+                </div>
+            </div>
+            <div class="modal-body">
+
+                <form class="form-horizontal" role="form" name="papeForm">
+                    <div class="container h-divider"></div>
+
+                    <div class="form-group">
+                        <div class="col-lg-12 col-md-12 col-sm-10  col-xs-12 ">
+
+                            <name-directive ng-model="papeForm.event_id" name="events_code" placeholder="Access Code" id="event_code" required></name-directive>
+                            <invalid-directive ng-messages="papeForm.events_code.$error" ng-if="papeForm.events_code.$touched && papeForm.events_code.$invalid"></invalid-directive>
+                        </div>
+                    </div>
+                    <div class="container h-divider"></div>
+
+                    <div class="form-group">
+                        <div class="col-lg-12 col-md-12 col-sm-12  col-xs-12 ">
+
+                            <div class="fileUploads bordered btn btn-primary ">
+                                <span class="glyphicon glyphicon-cloud-upload "></span>
+                                <span>PDF FILE *</span>
+                                <input type="file" class="upload" ngf-select ng-model="filePdf" name="paper" ngf-pattern="'application/pdf'" ngf-accept="'application/pdf'" required />
+                                <span ng-show="filePdf"> || <span class="glyphicon glyphicon-file"></span>{{filePdf.name}}: {{filePdf.size}}</span>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="container h-divider"></div>
+
+                    <div class="form-group">
+                        <div class="col-lg-12 col-md-12 col-sm-10  col-xs-12 ">
+                            <name-directive ng-model="event_key_words" name="key_words" placeholder="Key Words" id="key_words" ng-keyup="addKeyWords(event_key_words,$event)"></name-directive>
+                            <invalid-directive ng-messages="papeForm.key_words.$error" ng-if="papeForm.key_words.$touched && papeForm.key_words.$invalid"></invalid-directive>
+
+
+                        </div>
+                    </div>
+
+                    <div ng-show="!isKeyWordsEmpty">
+
+
+                        <div class="alert alert-dismissible alert-info">
+                            <button type="button" class="close" ng-click="removeAll()">&times;</button>
+
+                            <h5>Key Words</h5>
+                            <div class="form-group">
+                                <div class="col-lg-12 col-md-12 col-sm-10  col-xs-12 ">
+                                    <ul class="pagination" ng-repeat="word in keyWords">
+                                        <li><a href="#" class=" small-text bg-primary">{{word}} <span  class="glyphicon glyphicon-remove close-button" ng-click="removeKeyWord(word)"> </span></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="container h-divider"></div>
+
+                    <div class="form-group">
+                        <div class="col-lg-12 col-md-12 col-sm-12  col-xs-12 ">
+                            <text-area-directive placeholder="Abstract" ng-model="papeForm.paper_disc" name="paper_abs" id="paper_abs" required></text-area-directive>
+                            <invalid-directive ng-messages="papeForm.paper_abs.$error" ng-if="papeForm.paper_abs.$touched && papeForm.paper_abs.$invalid"></invalid-directive>
+
+                        </div>
+                    </div>
+                    <div class="container h-divider"></div>
+
+
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" ng-click="submitPaper()" class="btn btn-success" data-dismiss="modal"><spna class="glyphicon glyphicon-paste"></spna>Submit</button>
+
+                <button type="button" ng-click="cancel()" class="btn btn-danger"><spna class="glyphicon glyphicon-remove"></spna> Cancel</button> </div>
+        </div>
+    </div>
+</div>

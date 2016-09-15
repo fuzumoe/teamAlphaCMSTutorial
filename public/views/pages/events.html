@@ -1,0 +1,134 @@
+<div class="container margined-30">
+
+    <div class="jumbotron">
+
+
+        <!--after loging content block starts here-->
+        <div class="row" ng-if="loggedIn">
+            <div class="container text-center center-block">
+
+                <div class="panel panel-primary">
+                    <div class="panel-heading">
+
+                        <a href="/" class="btn bg-warning text-center pull-left pull-up   bordered "><i class="fa fa-home fa-2x " aria-hidden="true"></i>
+                             </a>
+                        <h3 class="panel-title hidden-sm hidden-xs ">Conference Management </h3>
+                        <h5 class="panel-title hidden-lg hidden-md ">Conference Management</h5>
+                    </div>
+                    <div class="panel-body">
+                        <div class=" container text-center center-block margined-10 ">
+                            <div class="container h-divider"></div>
+                        </div>
+
+                        <p ng-repeat="event in AllEvent | filter: main.searchKeyword ">
+                            <p> {{event._id}}</p>
+                        </p>
+                        <table class="table table-responsive table-striped table-hover  hidden-lg hidden-md ">
+                            <thead>
+                                <tr class="info">
+
+                                    <th class="text-center ">
+                                        <button class="btn btn-primary btn-xs bordered" title="Add new Event " ng-click="events.addNewEvent() ">
+                                            <spna class="glyphicon glyphicon-plus "></spna>
+                                       </button>
+
+                                        <h5 class="panel-title hidden-lg hidden-md "><u>Events</u></h5>
+
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class=" ">
+
+                                <tr ng-repeat="event in AllEvent | filter: main.searchKeyword ">
+
+                                    <td class="text-center ">
+                                        Confrence:{{event.event}} <br>
+                                        <div class="container h-divider"></div>
+                                        Discription:{{event.event_disc}} <br>
+                                        <div class="container h-divider"></div>
+
+                                        Dead line Time: {{event.date_time}}
+                                        <div class="container h-divider"></div>
+
+                                        <br>
+
+                                        <button class="btn btn-info bordered " ng-click="events.showDetailed(event._id,  event.event, event .event_disc,  event.date_time, event.opened, event.host , event.sub_end, event.end_time)" title="Show Detailed "><span class="glyphicon glyphicon-th"></span></button>
+
+                                        <button class="btn btn-warning bordered " ng-click="events.updateEvent(event._id,  event.event, event .event_disc,  event.date_time, event.opened, event.host , event.sub_end, event.end_time)" title="Edit Event "><span class="glyphicon glyphicon-edit"></span></button>
+
+                                        <button class="btn btn-danger bordered " ng-click="events.removeDeleteDeactivate(event._id) " title="Close Submission "><span class="glyphicon glyphicon-off"></span></button>
+                                        <button class="btn btn-info bordered " ng-click="events.sendEnvitation(event)" title="Send Conference/Event Invitation"><span class="glyphicon glyphicon-envelope"></span></button>
+
+                                        <div class="container h-divider"></div>
+
+                                    </td>
+                                </tr>
+
+
+                            </tbody>
+                        </table>
+                        <table class="table table-responsive table-striped table-hover  hidden-sm hidden-xs">
+                            <thead>
+                                <tr class="info">
+
+                                    <th class="text-center ">
+                                        <h4><u>Confrence</u></h4>
+                                    </th>
+                                    <th class="text-center ">
+                                        <h4><u>Discription</u></h4>
+                                    </th>
+                                    <th class="text-center ">
+                                        <h4><u>Dead line Time</u></h4>
+                                    </th>
+                                    <th class="text-center ">
+                                        <button class="btn btn-primary  bordered" title="Add new Event " ng-click="events.addNewEvent() ">
+                                            <spna class="glyphicon glyphicon-plus "></spna>
+                                       </button>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody class=" ">
+
+                                <tr ng-repeat="event in AllEvent | filter: main.searchKeyword ">
+
+                                    <td class="text-center ">{{event.event}}</td>
+                                    <td class="text-center ">{{event.event_disc}}</td>
+                                    <td class="text-center ">{{event.date_time}}</td>
+                                    <td class="text-center ">
+                                        <button class="btn btn-info bordered " ng-click="events.showDetailed(event._id,  event.event, event .event_disc,  event.date_time, event.opened, event.host , event.sub_end, event.end_time)" title="Show Detailed "><span class="glyphicon glyphicon-th"></span></button>
+
+                                        <button class="btn btn-warning bordered " ng-click="events.updateEvent(event._id,  event.event, event .event_disc,  event.date_time, event.opened, event.host , event.sub_end, event.end_time)" title="Edit Event "><span class="glyphicon glyphicon-edit"></span></button>
+                                        <button class="btn btn-danger bordered " ng-click="events.removeDeleteDeactivate(event._id) " title="Close Submission "><span class="glyphicon glyphicon-off "></span></button>
+                                        <button class="btn btn-info bordered " ng-click="events.sendEnvitation(event) " title="Send Conference/Event Invitation"><span class="glyphicon glyphicon-envelope"></span></button>
+                                        <div class="container h-divider"></div>
+
+                                    </td>
+                                </tr>
+
+
+                            </tbody>
+                        </table>
+                        <div class=" container text-center center-block ">
+                            <div class="container h-divider "></div>
+                        </div>
+
+
+
+                        <br>
+                        <br>
+                    </div>
+
+
+                </div>
+            </div>
+            <!--after loging content block ends here-->
+            <div class="text-center pull-up ">
+                <div class=" container text-center center-block ">
+                    <div class="container h-divider "></div>
+
+                </div>
+                <p>Copyright © 2016</p>
+            </div>
+        </div>
+    </div>
+</div>

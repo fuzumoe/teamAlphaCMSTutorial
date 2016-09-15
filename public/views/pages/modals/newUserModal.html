@@ -1,0 +1,53 @@
+<div class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header "> <button type="button" class="close" ng-click="close()" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <div class="modal-title">
+
+
+                    <span class=" hidden-sm hidden-xs pull-left">
+                        <i class="fa fa-user-plus  fa-4x" aria-hidden="true"></i> </span>
+                    <h2 class="hidden-sm hidden-xs text-center">{{title}} </h2>
+                    <span class=" pull-left">
+                        <i class="fa fa-user-plus hidden-lg hidden-md fa-2x" aria-hidden="true"></i> </span>
+                    <h6 class="text-center hidden-lg hidden-md">{{title}} </h6>
+                </div>
+            </div>
+            <div class="modal-body">
+
+                <form class="form-horizontal" name="newUserForm" novalidate>
+                    <div class="row">
+                        <div class="container h-divider"></div>
+                        <div class="form-group" class="form-group" ng-class="{ 'has-error' : newUserForm.userNameField.$invalid && newUserForm.userNameField.$dirty   &&  !newUserForm.userNameField.$prestine }" disabled>
+                            <div class="col-lg-12 col-md-12 col-sm-10  col-xs-12 ">
+                                <name-directive ng-model="newUserForm.full_name" minlength="4" minlength="20" placeholder="Full Name" id="userNameField" name="userNameField" required>
+                                </name-directive>
+                                <invalid-directive ng-messages="newUserForm.userNameField.$error" ng-if="newUserForm.userNameField.$touched && newUserForm.userNameField.$invalid"></invalid-directive>
+                            </div>
+                        </div>
+                        <div class="container h-divider"></div>
+                        <div class="form-group" ng-class="{ 'has-error' : newUserForm.email.$invalid && newUserForm.email.$dirty   &&  !newUserForm.email.$prestine }">
+                            <div class="col-lg-12 col-md-12 col-sm-12  col-xs-12 ">
+                                <email-directive placeholder="Email.." ng-model="newUserForm.email" name="email" id="email" required></email-directive>
+                                <invalid-directive ng-messages="newUserForm.email.$error" ng-if="newUserForm.email.$touched && newUserForm.email.$invalid"></invalid-directive>
+                            </div>
+                        </div>
+                        <div class="container h-divider"></div>
+
+                        <div class="form-group" ng-class="{ 'has-error' : newUserForm.userNameinsId.$invalid && newUserForm.userNameinsId.$dirty   &&  !newUserForm.userNameinsId.$prestine }" disabled>
+                            <div class="col-lg-12 col-md-12 col-sm-10  col-xs-12 ">
+                                <name-directive ng-model="newUserForm.insId" ng-model="newUserForm.insId" placeholder="Institution ID" id="userNameinsId" name="userNameinsId" required>
+                                </name-directive>
+                                <invalid-directive ng-messages="newUserForm.userNameinsId.$error" ng-if="newUserForm.userNameinsId.$touched && newUserForm.userNameinsId.$invalid"></invalid-directive>
+                            </div>
+                        </div>
+                        <div class="container h-divider"></div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" ng-click="close()" class="btn btn-success" data-dismiss="modal"><spna class="glyphicon glyphicon-plus"></spna>Add</button>
+                <button type="button" ng-click="cancel()" class="btn btn-danger"><spna class="glyphicon glyphicon-remove"></spna> Cancel</button> </div>
+        </div>
+    </div>
+</div>

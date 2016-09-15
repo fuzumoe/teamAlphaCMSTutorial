@@ -1,0 +1,45 @@
+<div class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header"> <button type="button" class="close" ng-click="close()" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <div class="modal-title">
+                    <span class="hidden-sm hidden-xs  pull-left">
+                        <i class="fa fa-paper-plane fa-4x" aria-hidden="true"></i> </span>
+                    <h2 class="hidden-sm hidden-xs  text-center">{{title}}</h2>
+
+                    <span class="hidden-lg hidden-md pull-left">
+                        <i class="fa fa-paper-plane fa-2x" aria-hidden="true"></i> </span>
+                    <h6 class="hidden-lg hidden-md text-center">{{title}}</h6>
+                </div>
+            </div>
+            <form class="form-horizontal" role="form" name="msgForm" ng-submit="close()">
+
+                <div class="modal-body">
+
+                    <div class="container h-divider"></div>
+                    <fieldset ng-show="!chat" class="form-group" ng-class="{ 'has-error' : msgForm.to.$invalid && msgForm.to.$dirty   &&  !msgForm.to.$prestine }">
+                        <div class="col-lg-12 col-md-12 col-sm-10  col-xs-12 ">
+                            <email-directive name="to" ng-model="msgForm.to" placeholder="Email*" id="to" required></email-directive>
+                            <invalid-directive ng-messages="msgForm.to.$error" ng-if="msgForm.to.$touched && msgForm.to.$invalid"></invalid-directive>
+                        </div>
+                    </fieldset>
+                    <div class="container h-divider"></div>
+                    <fieldset class="form-group">
+                        <div class="col-lg-12 col-md-12 col-sm-10  col-xs-12 ">
+
+                            <text-area-directive class="form-control custom-control" placeholder="Message goes here ....." rows="10" cols="50" ng-model="msgForm.msg" name="msg" id="msg"></text-area-directive>
+                            <div class="container h-divider"></div>
+                            <text-area-directive ng-show="chat" lass="form-control" placeholder="Type Additional Message here..." ng-model="msgForm.txt" name="txt"></text-area-directive>
+                        </div>
+                    </fieldset>
+
+
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-success" data-dismiss="modal"><spna class=" glyphicon glyphicon-send"></spna> Send</button>
+                        <button type="button" ng-click="cancel()" class="btn btn-danger"><spna class="glyphicon glyphicon-remove"></spna> Cancel</button> </div>
+
+
+                </div>
+            </form>
+        </div>
+    </div>

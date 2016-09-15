@@ -1,0 +1,113 @@
+<!--start of jumbotron margined-100-->
+<div class="container margined-10">
+    <div class="jumbotron container">
+        <div class="row">
+            <div class="panel panel-primary ">
+                <div class="panel-heading " style="border:1px solid #FFF">
+                    <h1 class="panel-title title text-capitalize text-center ">Team Alpha</h1>
+                </div>
+
+                <div class="panel-body">
+
+                    <div class="col-lg-6 col-md-6 hidden-sm hidden-xs">
+                        <!--<a href="/"><img src="/assets/ju.png" class="img-responsive col-lg-4 col-md-4 col-sm-4 col-xs-12 jumbtron-image" alt="Team Alpha"></a>-->
+                        <div class="container">
+                            <br>
+                            <a href="/"><img src="/assets/ju.png" class="img-responsive col-lg-4 col-md-4 col-sm-4 col-xs-12 jumbtron-image" alt="Team Alpha"></a>
+
+                        </div>
+
+                    </div>
+                    <!--start of container-->
+                    <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+                        <div ng-show="proccessing" class="progres-container">
+                            <img src="/assets/progress.gif" class="img-responsive" alt="">
+
+                        </div>
+                        <div ng-show="!proccessing">
+                            <div class="container">
+                                <div class="row h-divider"></div>
+
+                                <h4 class="text-center">::Login::</h4>
+                                <!--start of form-horizontal-->
+                                <form class="form-horizontal container margined-40" name="loginForm" ng-submit="loginForm.$valid && auth.doLogin()" novalidate>
+                                    <!--start of row-->
+                                    <div class="row">
+                                        <div class="row h-divider"></div>
+                                        <h4 class="error text-center">{{message}}</h4>
+                                        <!--start of Email form-group-->
+                                        <div class="form-group" ng-class="{ 'has-error' : loginForm.loginEmailfield.$invalid && loginForm.loginEmailfield.$dirty   &&  !loginForm.loginEmailfield.$prestine }">
+                                            <div class="col-lg-12 col-md-12 col-sm-12  col-xs-12 ">
+                                                <!--<input type="text" class="form-control" id="inputEmail" placeholder="Email">-->
+                                                <email-directive ng-model="auth.authData.email" name="loginEmailfield" placeholder='Email ...' id="logininputEmail" required></email-directive>
+                                                <invalid-directive ng-messages="loginForm.loginEmailfield.$error" ng-if="loginForm.loginEmailfield.$touched && loginForm.loginEmailfield.$invalid"></invalid-directive>
+                                            </div>
+                                        </div>
+                                        <!--end of Email form-group-->
+                                        <!--start of Password form-group-->
+                                        <div class="form-group" ng-class="{ 'has-error' : loginForm.loginPasswrodfield.$invalid && loginForm.loginPasswrodfield.$dirty   &&  !loginForm.loginPasswrodfield.$prestine }">
+                                            <div class="col-lg-12 col-md-12 col-sm-12  col-xs-12 ">
+                                                <!--<input type="password" class="form-control" id="inputPassword" placeholder="Password">-->
+                                                <password-directive ng-model="auth.authData.password" placeholder='Password ...' id="logininputPassword" name="loginPasswrodfield" minlength="4" required></password-directive>
+
+                                                <invalid-directive ng-messages="loginForm.loginPasswrodfield.$error" ng-if="loginForm.loginPasswrodfield.$touched &&  loginForm.loginPasswrodfield.$invalid"></invalid-directive>
+                                            </div>
+                                        </div>
+                                        <!--end of Password form-group-->
+                                        <!--start of buttns form-group-->
+
+                                        <div class="form-group  text-center margined-10">
+
+
+                                            <button type="reset" class="btn btn-danger col-lg-4 col-md-4 col-sm-12 col-xs-12   "><span class="glyphicon glyphicon-refresh"></span> Reset </button>
+                                            <button type="submit " class="btn btn-primary col-lg-4 col-md-4 col-sm-12 col-xs-12 "><span class="glyphicon glyphicon-log-in"></span> Login</button>
+                                            <button type="button" class="btn btn-info col-lg-4 col-md-4 col-sm-12 col-xs-12  "> <a href="/signup"><span class="glyphicon glyphicon-pencil"></span> SignUp </a></button>
+                                        </div>
+                                        <h6 class="text-center"><i><a class="this-eror" href="#" ng-click="auth.getAccess()">forgot password?</a></i><span class="hidden-xs hidden-sm">:--|--:</span>
+                                            <i><a class="this-green" href="#" ng-click="auth.activate()">Activate Account!</a></i></h6>
+                                        <!--end of buttns form-group-->
+                                    </div>
+                                    <!--end of row-->
+                                </form>
+                                <!--end of form-horizontal-->
+                            </div>
+                            <!--end of container-->
+
+                            <!--end of fieldset-->
+
+
+
+                            <div class=" container text-center   ">
+                                <div class="container h-divider "></div>
+
+
+
+                                <!--start of social media icon-group-->
+                                <div class="form-group ">
+                                    <button class="btn btn-info fb-bg col-lg-12  col-md-12 col-sm-12 col-xs-12" ng-click="auth.fbLogin()">
+            <i class="fa  fa-facebook-official fa-2x pull-left  vcenter " aria-hidden="true"></i><div class="vcenter ingraved-hr">Signup Facebook</div></button>
+
+                                    <button class="btn  btn-danger  col-lg-12 col-md-12 col-sm-12 col-xs-12" ng-click="auth.gplogin()">
+            <i class="fa fa-google-plus-official fa-2x pull-left   vcenter"  aria-hidden="true"></i><div class="vcenter ingraved-hr">Signup Google+</div></button>
+
+                                </div>
+                                <!--end of social media icon-group-->
+
+                            </div>
+                            <div class="container h-divider "></div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center pull-up">
+                <div class=" container text-center center-block">
+                    <div class="container h-divider"></div>
+
+                </div>
+                <p>Copyright © 2016</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!--end of container margined-100-->

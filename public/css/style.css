@@ -1,0 +1,635 @@
+@font-face {
+    font-family: Greek;
+    src: url(../fonts/GreekHouse Symbolized_Free.tff) format('truetype');
+}
+
+body {
+    background-image: url("../assets/v22.jpg");
+    /*height: 100%;*/
+    /*background: #3d3e43;*/
+    /*background-image: url('../assets/vector.jpg') no-repeat;*/
+    /*background-color: slategrey; */
+}
+
+.carousel-inner>.item>img,
+.carousel-inner>.item>a>img {
+    width: 100%;
+}
+
+.carousel-control.right,
+.carousel-control.left {
+    background-image: none;
+}
+
+@media only screen and (min-width: 1200px) {
+    .carousel-caption {
+        margin-top: 30%;
+        top: 46%;
+    }
+}
+
+.footer .jumbotron {
+    box-shadow: none;
+}
+
+.margined-left-10 {
+    margin-left: 30px;
+}
+
+.margined-left-40 {
+    margin-left: 40px;
+}
+
+.btn {
+    margin-bottom: 2px;
+}
+
+.h-divider {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    height: 1px;
+    width: 100%;
+    border-top: 1px solid gray;
+}
+
+.icon-reflector {
+    background-color: #FFF;
+    margin: 5px;
+    border: 1px solid #3d3e43;
+    box-shadow: 0px 0px 10px #FFF;
+}
+
+.shadowed {
+    box-shadow: 0px 0px 10px #FFF;
+}
+
+nav {
+    box-shadow: 0px 0px 10px #FFF;
+}
+
+.navbar {
+    box-shadow: 0px 0px 10px #FFF;
+}
+
+.icon-reflector:hover {
+    border: none;
+    box-shadow: none;
+}
+
+.this-eror {
+    color: #c9302c;
+}
+
+.this-warning {
+    color: coral;
+}
+
+.thi-info {
+    color: teal;
+}
+
+.dashbord-icon {
+    min-width: 180px;
+    max-height: 180px;
+    min-height: 160px;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 3px;
+    border: 3px solid #FFF;
+    box-shadow: 0px 0px 10px #FFF;
+}
+
+.search-input {
+    margin-top: 10px;
+    width: 300px;
+}
+
+.search-input-icon {
+    margin-top: 10px;
+}
+
+.jumbtron-image {
+    float: right;
+    max-width: 600px;
+    max-height: 600px;
+    width: 100%;
+    margin-left: -60px;
+    padding: 0px;
+    border: 3px solid #FFF;
+    box-shadow: 0px 0px 10px #FFF;
+}
+
+.jumbtron-text {
+    max-width: 600px;
+    max-height: 600px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.v-divider {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    height: 100%;
+    width: 2px;
+    margin-right: 30px;
+    border-top: 1px solid gray;
+}
+
+.title {
+    margin-top: -2px;
+    font-family: Greek;
+    text-shadow: -1px -1px 0 #3d3e43, 1px -1px 0 #3d3e43, -1px 1px 0 #3d3e43, 1px 1px 0 #3d3e43;
+    /*-webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #3d3e43;*/
+}
+
+.title-header {
+    /*border: 1px outset #FFF;*/
+    margin-top: 1px;
+    font-family: Greek;
+    text-shadow: -1px -1px 0 #3d3e43, 1px -1px 0 #3d3e43, -1px 1px 0 #3d3e43, 1px 1px 0 #3d3e43;
+    /*-webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #3d3e43;*/
+}
+
+.bordered {
+    /*padding: 4px;*/
+    border: 3px solid #FFF;
+    color: #FFF;
+}
+
+.pull-up {
+    margin-top: -1px;
+    margin-bottom: -2px;
+}
+
+.footer {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.margined-100 {
+    margin-top: 100px;
+}
+
+.margined-50 {
+    margin-top: 50px;
+}
+
+.margined-30 {
+    margin-top: 10%;
+}
+
+.margined-dashboard-30 {
+    margin-top: 7%;
+}
+
+margined-form-30 {
+    margin-top: 5%;
+}
+
+.margined-minus-30 {
+    margin-top: -40%;
+}
+
+.margined-20 {
+    margin-top: 20px;
+}
+
+.margined-10 {
+    margin-top: 10px;
+}
+
+.error {
+    color: #c9302c;
+    font-style: italic;
+}
+
+.this-green {
+    color: cadetblue;
+    ;
+    font-style: italic;
+}
+
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+
+.ingraved-hr {
+    border-left: inset #ffffff 1px;
+    border-right: outset #ffffff 1px;
+    padding-left: 6px;
+    padding-right: 6px;
+    height: 100%;
+}
+
+.fb-bg {
+    background: #3C6AAA;
+    margin-right: 2px;
+}
+
+.fb-bg:hover {
+    background: #3b5998;
+}
+
+.jumbotron {
+    box-shadow: 0px 0px 10px #FFF;
+    border-radius: 5px;
+    border: 3px solid #FFF;
+}
+
+.user-image {
+    margin-left: 50px;
+}
+
+.user-image img {
+    max-height: 250px;
+    max-width: 100px;
+    border: 4px solid #Fff;
+    padding: 0px;
+}
+
+.user-profile {
+    padding-top: 10px;
+    padding-left: 5px;
+}
+
+.user-name {
+    padding-top: 20px;
+}
+
+.user-profile-area {
+    background: #3d3e43;
+    border: 5px solid #FFF;
+    margin-bottom: 4px;
+    margin-top: 4px;
+}
+
+.progressbar-image {
+    max-width: 100px;
+    max-height: 200px;
+}
+
+.small-text {
+    font-size: 12px;
+    margin: 1px;
+}
+
+.logo {
+    width: 100px;
+    height: 80px;
+    margin-top: -25px;
+    align-content: center;
+}
+
+.logo-small {
+    width: 80px;
+    height: 60px;
+    margin-top: -15px;
+    align-content: center;
+}
+
+.round {
+    border-radius: 5px;
+}
+
+.user-profile-image {
+    z-index: 600;
+    width: 100px;
+    width: 60px;
+    margin-top: -40p;
+    align-content: center;
+}
+
+.nav-bar-container {
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.navbar-brand {
+    z-index: -300;
+}
+
+.bg-gray {
+    background: #3d3e43;
+    min-width: 5%;
+    border: solid 1px #FFF;
+    padding: 0px;
+    margin-left: 2%;
+}
+
+.bg-gray-borderless {
+    background: #3d3e43;
+    min-width: 5%;
+}
+
+.profile-thumbnail {
+    min-width: 40%;
+    min-height: 24%;
+    max-height: 18%;
+    border: 1px solid #FFF;
+}
+
+.profile-thumbnail-dashboard {
+    min-width: 40%;
+    min-height: 200%;
+    border: 1px solid #FFF;
+}
+
+.progres-container {
+    border: none;
+    background: transparent;
+}
+
+.progres-container img {
+    display: block;
+    border: none;
+    width: 50%;
+    height: 50%;
+    background: transparent;
+    /*left: 50%;
+    top: 50%;*/
+    margin-left: 30%;
+    /*margin-right: 50%;*/
+    margin-top: 10%;
+    /*margin-bottom: 50%;*/
+}
+
+.progres-container-two {
+    border: none;
+    background: transparent;
+}
+
+.progres-container-two img {
+    display: block;
+    border: none;
+    width: 30%;
+    height: 20%;
+    background: transparent;
+    /*left: 50%;
+    top: 50%;*/
+    margin-left: 30%;
+    /*margin-right: 50%;*/
+    margin-top: 10%;
+    margin-bottom: 10%;
+}
+
+
+/************ Modal ***************************/
+
+
+/*
+#progress {
+    position: fixed;
+    left: 25%;
+    top: 25%;
+    padding: 25px;
+    width: 50%;
+    height: 50%;
+    z-index: 100;
+}
+
+#overlay {
+    position: fixed;
+    left: 25%;
+    top: 25%;
+    padding: 25px;
+    border: 2px solid black;
+    background-color: #ffffff;
+    width: 50%;
+    height: 50%;
+    z-index: 100;
+}
+
+#fade {
+    position: fixed;
+    left: 0%;
+    top: 0%;
+    background-color: black;
+    -moz-opacity: 0.7;
+    opacity: .70;
+    filter: alpha(opacity=70);
+    width: 100%;
+    height: 100%;
+    z-index: 90;
+}
+
+#custom-modal.ng-enter {
+    transition: opacity .5s ease-out;
+    opacity: 0;
+}
+
+#custom-modal.ng-enter.ng-enter-active {
+    opacity: 1;
+}
+
+#custom-modal.ng-leave {
+    transition: opacity .5s ease-out;
+    opacity: 1;
+}
+
+#custom-modal.ng-leave.ng-leave-active {
+    opacity: 0;
+}*/
+
+
+/*****************************************/
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    float: left;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+.profile-update-image {
+    width: 130px;
+    height: 100px;
+}
+
+#file {
+    margin-left: 40px;
+    margin-right: 2px;
+}
+
+.tx {
+    border: 1px solid #ddd;
+    background: #fff url(../img/input-shaddow.gif) no-repeat left top;
+    font: 11px Arial, Helvetica, sans-serif;
+    color: #000;
+    padding: 5px;
+    width: 262px;
+    float: left;
+    margin: 0 10px 0 0;
+    height: 40%;
+    overflow: hidden;
+    text-align: left;
+}
+
+.tx-container {
+    height: 40%;
+}
+
+.date-holder {
+    background: #Fff;
+    color: #3C6AAA;
+    border-radius: 3px;
+    /*border: inset 1px #ddd;*/
+    padding: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+table tbody tr:nth-child(even) {
+    /*background-color: slategray;*/
+    color: #ccc;
+    cursor: pointer;
+}
+
+table tbody tr:nth-child(odd) {
+    color: #ccc;
+    cursor: pointer;
+}
+
+table tbody tr:hover {
+    /*background: #Fff;*/
+    color: #Fff;
+}
+
+.thumb {
+    width: 24px;
+    height: 24px;
+    float: none;
+    position: relative;
+    top: 7px;
+}
+
+.drop-box {
+    width: 100%;
+    color: #000;
+    padding: 5px;
+    font-size: 16px;
+    line-height: 1;
+    border: 0;
+    border-radius: 0;
+    height: 34px;
+    border-radius: 4px;
+}
+
+.dragover {
+    border: 5px dashed blue;
+}
+
+.thumb {
+    width: 24px;
+    height: 24px;
+    float: none;
+    position: relative;
+    top: 7px;
+}
+
+form .progress {
+    line-height: 15px;
+}
+
+.progress {
+    display: inline-block;
+    width: 100px;
+    border: 3px groove #CCC;
+}
+
+.progress div {
+    font-size: smaller;
+    background: orange;
+    width: 0;
+}
+
+.fileUpload {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+
+.modal-header {
+    padding: 9px 15px;
+    border-bottom: 1px solid #eee;
+    color: #FFF;
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#49c0f0+0,2cafe3+100;Blue+3D+%2311 */
+    background: rgb(73, 192, 240);
+    /* Old browsers */
+    background: -moz-radial-gradient(center, ellipse cover, rgba(73, 192, 240, 1) 0%, rgba(44, 175, 227, 1) 100%);
+    /* FF3.6-15 */
+    background: -webkit-radial-gradient(center, ellipse cover, rgba(73, 192, 240, 1) 0%, rgba(44, 175, 227, 1) 100%);
+    /* Chrome10-25,Safari5.1-6 */
+    background: radial-gradient(ellipse at center, rgba(73, 192, 240, 1) 0%, rgba(44, 175, 227, 1) 100%);
+    /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#49c0f0', endColorstr='#2cafe3', GradientType=1);
+    /* IE6-9 fallback on horizontal gradient */
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.close-button {
+    color: #c9302c;
+    font-size: 10px;
+}
+
+.close-button :hover {
+    color: #FFF;
+}
+
+.selectpicker {
+    width: 100%;
+    background: #Fff;
+}
+
+.fileUploads {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.fileUploads input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}

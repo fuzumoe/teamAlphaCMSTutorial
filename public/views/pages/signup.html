@@ -1,0 +1,168 @@
+<!--start of container  -->
+<div class="jumbotron container margined-30">
+
+    <div class="panel panel-primary">
+        <div class="panel-heading " style="border:1px solid #FFF">
+            <h1 class="panel-title title text-capitalize text-center ">Team Alpha</h1>
+
+        </div>
+
+        <div class="panel-body">
+            <div class="col-lg-6 col-md-6 hidden-xs hidden-xs">
+                <div class="container">
+                    <br>
+                    <a href="/"><img src="/assets/ju.png" class="img-responsive col-lg-4 col-md-4 col-sm-4 col-xs-12 jumbtron-image" alt="Team Alpha"></a>
+
+
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
+
+                <div ng-show="proccessing" class="progres-container">
+                    <h1 class="text-center">... ..... ...</h1>
+                    <img src="/assets/progress.gif" class="img-responsive" alt="">
+                    <h1 class="text-center">... ..... ...</h1>
+
+                </div>
+                <div ng-show="!proccessing">
+                    <div ng-if="reg.usingSocialMedia" class="row">
+
+
+                        <div class="col-lg col-lg-offset-2 col-lg-8 col-md-2 col-md-offset-2   user-profile-area">
+
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 center-block text-center">
+                                <div class="text-center center-block user-image ">
+                                    <img ng-src="{{reg.userData.picture }}" class="img-responsive col-lg-4 col-md-4 col-sm-4 col-xs-12 " bordered border="5" alt="Team Alpha">
+
+                                </div>
+                                <div class="user-profile text-center center-block ">
+                                    <h4 class="text-center">{{reg.userData.name}}</h4>
+                                    <h4 class="text-center">{{reg.userData.email}}</h4>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                    <div class="container h-divider"></div>
+
+                    <h4 class="text-center">::Sign Up::</h4>
+
+                    <!--start of form-horizontal-->
+                    <form class="form-horizontal container margined-40" name="signUpForm" ng-submit="reg.doSignUp()">
+                        <!--start of fieldset-->
+
+                        <!--start of container-->
+                        <div class="container center-block ">
+                            <div class="row text-center">
+                                <div class="container h-divider"></div>
+                            </div>
+
+
+
+                            <!--start of row-->
+                            <div class="row">
+                                <h4 class="error text-center">{{message}}</h4>
+                                <!--show if usng social media based login-->
+                                <!--start of name form-group-->
+                                <div class="row text-center">
+
+                                </div>
+
+                                <fieldset ng-if="reg.usingSocialMedia" class="form-group" ng-class="{ 'has-error' : signUpForm.userNameField.$invalid && signUpForm.userNameField.$dirty   &&  !signUpForm.userNameField.$prestine }" disabled>
+                                    <div class="col-lg-12 col-md-12 col-sm-10  col-xs-12 ">
+                                        <name-directive placeholder='Name ...' value="{{reg.userData.name}}" id="userinputName" name="userNameField" required>
+                                        </name-directive>
+                                        <invalid-directive ng-messages="signUpForm.userNameField.$error" ng-if="signUpForm.userNameField.$touched &&signUpForm.userNameField.$invalid"></invalid-directive>
+                                    </div>
+                                </fieldset>
+                                <!--end of name form-group-->
+
+                                <!--start of email form-group-->
+                                <fieldset ng-if="reg.usingSocialMedia" class="form-group" ng-class="{ 'has-error' : signUpForm.userEmailField.$invalid && signUpForm.userEmailField.$dirty   &&  !signUpForm.userEmailField.$prestine }">
+                                    <div class="col-lg-12 col-md-12 col-sm-10  col-xs-12">
+                                        <email-directive value="{{reg.userData.email}}" id="userinputEmail" placeholder='Email ...' name="userEmailField" required></email-directive>
+                                        <invalid-directive ng-messages="signUpForm.userEmailField.$error" ng-if="signUpForm.userEmailField.$touched &&signUpForm.userEmailField.$invalid"></invalid-directive>
+                                    </div>
+                                </fieldset>
+                                <!--end of email form-group-->
+
+
+                                <!--show if usng not social media based login-->
+                                <!--start of name form-group-->
+                                <div ng-if="!reg.usingSocialMedia" class="form-group" ng-class="{ 'has-error' : signUpForm.userNameField.$invalid && signUpForm.userNameField.$dirty   &&  !signUpForm.userNameField.$prestine }">
+                                    <div class="col-lg-12 col-md-12 col-sm-10  col-xs-12 ">
+                                        <name-directive placeholder='Name ...' ng-model="reg.user.name" id="userinputName" name="userNameField" required>
+                                        </name-directive>
+                                        <invalid-directive ng-messages="signUpForm.userNameField.$error" ng-if="signUpForm.userNameField.$touched &&signUpForm.userNameField.$invalid"></invalid-directive>
+                                    </div>
+                                </div>
+                                <!--end of name form-group-->
+
+                                <!--start of email form-group-->
+                                <div ng-if="!reg.usingSocialMedia" class="form-group" ng-class="{ 'has-error' : signUpForm.userEmailField.$invalid && signUpForm.userEmailField.$dirty   &&  !signUpForm.userEmailField.$prestine }">
+                                    <div class="col-lg-12 col-md-12 col-sm-10  col-xs-12 ">
+                                        <email-directive ng-model="reg.user.email" placeholder='Email ...' id="userinputEmail" name="userEmailField" required></email-directive>
+                                        <invalid-directive ng-messages="signUpForm.userEmailField.$error" ng-if="signUpForm.userEmailField.$touched &&signUpForm.userEmailField.$invalid"></invalid-directive>
+                                    </div>
+                                </div>
+                                <!--end of email form-group-->
+
+                                <!--start of Password form-group-->
+                                <div class="form-group" ng-class="{ 'has-error' : signUpForm.userPasswordField.$invalid && signUpForm.userPasswordField.$dirty   &&  !signUpForm.userPasswordField.$prestine }">
+                                    <div class="col-lg-12 col-md-12 col-sm-10  col-xs-12">
+                                        <password-directive ng-model="reg.user.password" placeholder='Password ...' id="inputPassword" name="userPasswordField" minlength="5" required></password-directive>
+                                        <invalid-directive ng-messages="signUpForm.userPasswordField.$error" ng-if="signUpForm.userPasswordField.$touched &&signUpForm.userPasswordField.$invalid"></invalid-directive>
+                                    </div>
+                                </div>
+                                <!--end of Password form-group-->
+
+                                <!--start of Retype Password form-group-->
+                                <div class="form-group" ng-class="{ 'has-error' : signUpForm.userRePasswordField.$invalid && signUpForm.userRePasswordField.$dirty   &&  !signUpForm.userRePasswordField.$prestine }">
+
+                                    <div class="col-lg-12 col-md-12 col-sm-10  col-xs-12 ">
+                                        <password-directive ng-model="reg.user.userRePassword" placeholder='Confirm Password ...' id=" inputPasswordAgain" minlength="5" name="userRePasswordField" required></password-directive>
+                                        <invalid-directive ng-messages="signUpForm.userRePasswordField.$error" placeholder='Confirm-Password...' ng-if="signUpForm.userRePasswordField.$touched &&signUpForm.userRePasswordField.$invalid"></invalid-directive>
+                                    </div>
+                                </div>
+                                <!--end of Retype Password form-group-->
+
+                                <div class="container h-divider"></div>
+
+                                <!--start of buttons form-group-->
+                                <div class="form-group ">
+
+                                    <button type="reset" class="btn btn-danger col-lg-4 col-md-4 col-sm-3 col-xs-12  ">  <span class="glyphicon glyphicon-refresh"></span>  Reset</button>
+                                    <button type="submit" class="btn btn-info  col-lg-4 col-md-4 col-sm-3 col-xs-12    "><span class="glyphicon glyphicon-pencil"></span>  SignUp </button>
+                                    <button type="button" class="btn btn-primary  col-lg-4 col-md-4 col-sm-3 col-xs-12 "> <a href="/login"  ng-disabled="isDisabled"><span class="glyphicon glyphicon-log-in"></span> Login</a></button>
+
+                                </div>
+
+                            </div>
+                            <div class="container h-divider"></div>
+
+                            <!--end of buttons form-group-->
+                        </div>
+                        <!--end of row-->
+                </div>
+            </div>
+            <!--end of container-->
+
+            </form>
+            <!--end of form-horizontal-->
+        </div>
+    </div>
+    <div class="text-center pull-up">
+        <div class=" container text-center center-block">
+            <div class="container h-divider"></div>
+
+        </div>
+        <p>Copyright © 2016</p>
+    </div>
+
+</div>
+
+
+
+<!--end of container  -->

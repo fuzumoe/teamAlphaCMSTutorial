@@ -1,0 +1,33 @@
+<div class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <div class="modal-header ">
+                <spna class="this-warnin"> <i class="fa fa-universal-access fa-3x pull-left" aria-hidden="true"></i></spna>
+                <h4 class="modal-title text-center"> {{title}}</h4> </div>
+            <div class="modal-body">
+                <div class="alert alert-dismissible alert-danger">
+                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    <strong>NB!</strong>
+                    <p>You are alomost done, go to your e-mail box and get the confirmation code that we have sent you and activate your account</p>
+                </div>
+
+                <form class="form-horizontal" role="form" novalidate>
+                    <!--start of name form-group-->
+                    <div class="form-group">
+                        <label for="code" class="col-sm-3 control-label">Confirmation Code</label>
+                        <div class="col-sm-7">
+                            <input type="text" class="form-control" id="Confirmationcode" placeholder="Code..." ng-model="code">
+
+                        </div>
+                        <button type="button" class="btn btn-info col-sm-2" ng-click="confirm()">Confiram</button>
+                    </div>
+            </div>
+            <!--end of name form-group-->
+            </form>
+        </div>
+        <div class="modal-footer">
+
+        </div>
+    </div>
+</div>

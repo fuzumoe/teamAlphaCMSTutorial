@@ -1,0 +1,216 @@
+<div class="container margined-dashboard-30">
+
+    <div class="jumbotron ">
+
+        <div class="row" ng-if="!loggedIn">
+            <!--<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <img src="/assets/ju.png" class="img-responsive col-lg-4 col-md-4 col-sm-4 col-xs-12 jumbtron-image" alt="Team Alpha">
+
+        </div>-->
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <!--<div class="v-divider"></div>-->
+
+                <div class="panel panel-primary">
+                    <div class="panel-heading" style="border:1px solid #FFF">
+                        <h1 class="panel-title title text-capitalize text-center  ">Team Alpha</h1>
+                    </div>
+
+                    <div class=" container text-center center-block">
+                        <div class="container h-divider"></div>
+
+                    </div>
+
+                    <div class="panel-body">
+
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                                <div class="container">
+                                    <br>
+                                    <a href="/"><img src="/assets/ju.png" class="img-responsive col-lg-4 col-md-4 col-sm-4 col-xs-12 jumbtron-image" alt="Team Alpha"></a>
+
+                                </div>
+
+
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 jumbtron-text">
+                                <div class=" container text-center center-block">
+                                    <div class="container h-divider"></div>
+
+                                </div>
+                                <p class="hidden-xs">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum recusandae, voluptatum maxime quasi, natus non totam quidem quibusdam blanditiis voluptas laborum. Sunt adipisci magnam veniam itaque accusamus quidem aliquam
+                                    Vitae voluptatibus nobis animi doloremque asperiores commodi laborum consectetur, temporibus assumenda cumque tempora, eius cupiditate consequatur quas</p>
+                                <div class=" container text-center center-block">
+                                    <div class="container h-divider"></div>
+
+                                </div>
+                                <div class="text-center mar">
+                                    <a class="btn btn-primary btn-lg col-xs-4 hidden-sm hidden-xs" href="/login"><span class="glyphicon glyphicon-log-in"></span>  Login</a>
+                                    <a class="btn btn-primary btn-xs col-xs-4 hidden-md hidden-lg" href="/login"><span class="glyphicon glyphicon-log-in"></span>Login</a>
+                                    <a class="btn btn-info btn-lg col-xs-4 hidden-sm hidden-xs" href="/signup"><span class="glyphicon glyphicon-pencil"></span> Signup</a>
+                                    <a class="btn btn-info btn-xs col-xs-4  hidden-md hidden-lg" href="/signup"><span class="glyphicon glyphicon-pencil"></span>Signup</a>
+                                    <a class="btn btn-success btn-lg col-xs-4 hidden-sm hidden-xs" href="/more"><span class="glyphicon glyphicon-th"></span> More</a>
+                                    <a class="btn btn-success btn-xs col-xs-4 hidden-md hidden-lg" href="/more"><span class="glyphicon glyphicon-th"></span>More</a>
+
+                                </div>
+                                <div class=" container text-center center-block">
+                                    <div class="container h-divider"></div>
+
+                                </div>
+                                <div class=" container text-center center-block">
+                                    <div class="container h-divider"></div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--pre login content block ends here-->
+
+        <!--after loging content block starts here-->
+        <div class="row  " ng-if="loggedIn">
+            <div class="container text-center center-block" ng-controller="MainController as dashboard">
+
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Dash::Board</h3>
+
+                        </div>
+                        <br>
+
+                        <div class="panel-body">
+
+                            <!--<h4>{{userName}}</h4>-->
+                            <div class=" hidden-lg  hidden-md">
+                                <!--<h3 class="panel-title">-- Dash::Board --</h3>-->
+                                <div class="container h-divider"></div>
+                            </div>
+                            <div class="hidden-xs hidden-sm">
+                                <div class="col-sm-12 col-xs-12 col-lg-4 col-md-4">
+
+                                    <a href="/events" class="btn btn-lg dashbord-icon  btn-warning text-center  ">
+                                        <i class="fa fa-calendar fa-5x" aria-hidden="true"></i>
+                                        <h4>Mange Confrences</h4>
+                                    </a>
+                                </div>
+                                <div class="col-sm-12 col-xs-12 col-lg-4 col-md-4">
+                                    <a href="/users" class="btn btn-lg dashbord-icon  btn-info text-center  ">
+                                        <i class="fa fa-users fa-5x" aria-hidden="true"></i>
+                                        <h4>Manage Users</h4>
+                                    </a>
+                                </div>
+                                <div class="col-sm-12 col-xs-12 col-lg-4 col-md-4">
+                                    <a href="/tasks" class="btn dashbord-icon btn-default btn-lg  text-center  ">
+                                        <i class="fa fa-tasks fa-5x" aria-hidden="true"></i>
+                                        <h4>Review Tasks</h4>
+                                    </a>
+                                </div>
+                                <div class="col-sm-12 col-xs-12   col-lg-4 col-md-4">
+                                    <a href="/messages" class="btn dashbord-icon btn-danger text-center  ">
+
+                                        <i class="fa fa-paper-plane fa-5x" aria-hidden="true"></i>
+                                        <h4>Send Messages</h4>
+                                    </a>
+                                </div>
+                                <div class="col-sm-12 col-xs-12  col-lg-4 col-md-4">
+                                    <a href="/profile" class="btn dashbord-icon btn-lg  btn-primary  text-center  ">
+                                        <span class="text-center"> &nbsp;
+                                <img ng-src="{{userImage}}" class="  bordered   text-center "
+                                 style="height: 100px; margin-left:0px; margin-right: 0px;" alt="{{userName}}">
+                                 <h4>My Profile</h4></a></span>
+                                        <div class="hidden-sm hidden-xs hidden-md">
+                                            <div class="container h-divider"></div>
+                                            <h3 class="panel-title">-- Dash::Board --</h3>
+                                            <div class="container h-divider"></div>
+                                        </div>
+                                </div>
+                                <div class="col-sm-12 col-xs-12  col-lg-4 col-md-4">
+                                    <a href="/papers" class="btn dashbord-icon btn-lg btn-success text-center ">
+                                        <i class="fa fa-files-o  fa-5x" aria-hidden="true"></i>
+                                        <h4>Manage Submissions</h4>
+                                    </a>
+                                    <div class="hidden-lg hidden-md hidden-sm hidden-xs ">
+                                        <div class="container h-divider"></div>
+                                        <h3 class="panel-title">-- Dash::Board --</h3>
+                                        <div class="container h-divider"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="hidden-lg hidden-md ">
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li class="btn btn-warning  btn-xs  bordered  text-center  ">
+                                        <a href="/events">
+                                            <i class="fa fa-calendar  " aria-hidden="true"></i>
+                                            <br>
+                                            <span>Confrences</span >
+                                        </a>
+                                        <div class="container h-divider"></div>
+                                    </li>
+
+                                    <li class="btn btn-xs bordered  btn-info text-center  ">
+                                        <a href="/users">
+                                            <i class="fa fa-users  " aria-hidden="true"></i>
+                                             <br>
+                                            <span> Users</span >
+                                        </a>
+                                        <div class="container h-divider"></div>
+
+                                    </li>
+                                    <li class="  bordered btn-default btn-xs  text-center  ">
+                                        <a href="/tasks" class="">
+                                            <i class="fa fa-tasks  " aria-hidden="true"></i>
+                                             <br>
+                                             <span>Tasks</span >
+                                        </a>
+                                        <div class="container h-divider"></div>
+
+                                    </li>
+                                    <li class="btn bordered btn-xs btn-danger text-center  ">
+                                        <a href="/messages">
+
+                                            <i class="fa fa-paper-plane  " aria-hidden="true"></i>
+                                             <br>
+                                            <span>Messages</span >
+                                        </a>
+                                        <div class="container h-divider"></div>
+
+                                    </li>
+                                    <li class="btn bordered btn-xs btn-success text-center ">
+                                        <a href="/papers">
+                                            <i class="fa fa-files-o   " aria-hidden="true"></i>
+                                            <br>
+                                            <span>Submission</span >
+                                        </a>
+                                        <div class="container h-divider"></div>
+
+                                    </li>
+                                </ul>
+ 
+                            </div>
+
+                        </div>
+                        <div class=" container text-center pull-up center-block">
+                            <div class="container h-divider"></div>
+                        </div>
+
+                        <br>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+        <!--after loging content block ends here-->
+        <div class="text-center pull-up">
+            <div class=" container text-center center-block">
+                <div class="container h-divider"></div>
+
+            </div>
+            <span>Copyright © 2016</span>
+                            </div>
+                        </div>
+                    </div>

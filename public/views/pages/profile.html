@@ -1,0 +1,174 @@
+<div class="container margined-30">
+
+    <div class="jumbotron">
+
+
+        <!--after loging content block starts here-->
+        <div class="row" ng-if="loggedIn">
+            <div class="container text-center center-block">
+
+                <div class="panel panel-primary">
+
+                    <div ng-show="proccessing" class="progres-container-two">
+                        <img src="/assets/progress.gif" class="img-responsive" alt="">
+
+                    </div>
+                    <div ng-show="!proccessing">
+                        <div class="panel-heading bg-primary">
+
+                            <a href="/" class="btn bg-warning text-center pull-left pull-up   bordered "><i class="fa  fa-home  fa-2x " aria-hidden="true"></i>
+                             </a>
+                            <h3 class="panel-title ">Profile Mangement</h3>
+
+                        </div>
+                        <div class="panel-body">
+                            <div class=" container text-center center-block margined-10">
+                                <div class="container h-divider"></div>
+                            </div>
+
+
+
+                            <div class="container text-center">
+                                <div class=" row    col-lg-2 col-md-2 col-sm-2 col-xs-2  "></div>
+                                <div class=" row bg-gray  col-lg-8 col-md-8 col-sm-12 col-xs-12 bordered round">
+
+
+
+
+                                    <ul class="list-group bg-gray-borderless">
+
+
+
+                                        <li class="list-group-item bg-gray-borderless">
+                                            <div class="row">
+                                                <div class="fileUpload bordered btn btn-primary col-lg-2 col-md-2">
+                                                    <span class="glyphicon glyphicon-cloud-upload "></span>
+                                                    <span>  Image file *</span > 
+                              <input type="file" class="upload" ngf-select   ng-model="prf.userImage" name="paper"  ngf-pattern="'image/*'" ngf-accept="'image/*'"   required >
+                             <span ng-show="userImage"> ||<span class="glyphicon glyphicon-file"></span>{{prf.userImage.name}}: {{prf.userImage.size}}</span>
+
+                                                </div>
+                                            </div>
+
+
+                                        </li>
+
+                                        <li class="list-group-item bg-gray-borderless">
+
+                                            <!--<input type="text" class="form-control" id="inputEmail" placeholder="Email">-->
+                                            <email-directive ng-model="prf.userEmail" placeholder="{{userEmail}}" required></email-directive>
+
+
+                                        </li>
+                                        <li class="list-group-item bg-gray-borderless">
+                                            <name-directive placeholder='{{userName}}' ng-model="prf.userName" required> </name-directive>
+                                        </li>
+                                        <li class="list-group-item bg-gray-borderless">
+
+
+
+
+                                            <div class="row">
+                                                <p class='box'>
+
+
+                                                    <div class="col-lg-12 col-md-12 col-sm-12  col-xs-12 ">
+                                                        <div class="hidden-lg hidden-md">
+                                                            <name-directive placeholder='{{userInsid}} : filter from here' ng-model="prf.searchKeywordInstitute" required> </name-directive>
+                                                        </div>
+                                                        <select class="drop-box " ng-model="prf.userInsid">
+                                                            <option value=""  disabled selected> {{userInsid}} </option>
+                                               
+                                                      <option ng-repeat="institute in institutes | filter: main.searchKeywordInstitute" >{{institute.name}}</option>
+
+                                                 
+                                                  </select>
+
+                                                </p>
+                                                </div>
+                                            </div>
+
+                                        </li>
+                                        <li class="list-group-item bg-gray-borderless">
+                                            <div class="row">
+                                                <div class="col-lg-12 col-md-12 col-sm-12  col-xs-12 ">
+
+                                                    <select class=" drop-box" ng-model="prf.userGender">
+                                                        <option  value="{{userGender}}" selected="selected">{{userGender}}</option>       
+                                                  <option value="Male">Male</option>
+                                                <option value="Female">Female</option>
+                                             </select>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item bg-gray-borderless">
+
+
+                                            <div class="row">
+                                                <div class="col-lg-12 col-md-12 col-sm-12  col-xs-12 ">
+                                                    <datepicker date-format="yyyy-MM-dd" date-max-limit="{{today}}" selector="form-control">
+
+                                                        <div class="input-group">
+                                                            <input class="form-control" placeholder='{{userDob}}' ng-model="prf.userDob" />
+                                                            <span class="input-group-addon" style="cursor: pointer">
+                                               <i class="fa fa-lg fa-calendar"></i>
+                                                     </span>
+                                                        </div>
+                                                    </datepicker>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item bg-gray-borderless">
+                                            <div class="row">
+
+
+                                                <p class='box'>
+
+                                                    <div class="col-lg-12 col-md-12 col-sm-12  col-xs-12 ">
+                                                        <div class="hidden-lg hidden-md">
+                                                            <name-directive placeholder='{{userNationality}} : filter from here' ng-model="prf.searchKeywordCountry" required> </name-directive>
+                                                        </div>
+
+                                                        <select class="drop-box " ng-model="prf.userNationality">
+                                                          
+                                                                 <option value=""  disabled selected> {{userNationality}} </option>
+                                                     <option ng-repeat="country in countries | filter: prf.searchKeywordCountry ">{{country.name}}</option>
+
+                                                 
+                                                  </select>
+
+                                                </p>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class="list-group-item bg-gray-borderless">
+                                            <text-area-directive class="form-control custom-control" placeholder="{{userAddress}}" rows="3" cols="50" ng-model="prf.userAddress"></text-area-directive>
+
+                                        </li>
+                                    </ul>
+                                    <div class="container h-divider"></div>
+                                    <button type="button " class=" col-lg-12 col-md-12 col-sm-12  col-xs-12  btn btn-info" ng-click="prf.updateProfile()"><span class="glyphicon glyphicon-floppy-saved"></span> Update</button>
+
+                                </div>
+
+                            </div>
+                            <div class=" container text-center center-block margined-10">
+                                <div class="container h-divider"></div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!--after loging content block ends here-->
+            <div class="text-center pull-up">
+                <div class=" container text-center center-block">
+                    <div class="container h-divider"></div>
+
+                </div>
+                <p>Copyright © 2016</p>
+            </div>
+        </div>
+    </div>

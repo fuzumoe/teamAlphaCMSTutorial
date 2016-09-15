@@ -1,0 +1,89 @@
+<div class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header"> <button type="button" class="close" ng-click="close()" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <div class="modal-title">
+                    <span class=" pull-left">
+                        <i class=" hidden-sm hidden-xs fa fa-calendar-check-o fa-4x" aria-hidden="true"></i> </span>
+                    <h2 class="hidden-sm hidden-xs text-center">{{title}}</h2>
+
+                    <i class="hidden-lg hidden-md fa fa-calendar-check-o fa-2x" aria-hidden="true"></i> </span>
+                    <h5 class="hidden-lg hidden-md  text-center">{{title}}</h5>
+                </div>
+            </div>
+            <div class="modal-body">
+
+                <form class="form-horizontal" role="form" name="eventsForm">
+                    <div class="container h-divider"></div>
+                    <div class="form-group">
+                        <div class="col-lg-12 col-md-12 col-sm-10  col-xs-12 ">
+
+                            <input type="hidden" name="country" ng-model="eventsForm.id">
+                            <name-directive ng-model="eventsForm.event" name="events" placeholder="{{eventsForm.event}}" id="events" required></name-directive>
+                            <invalid-directive ng-messages="eventsForm.events.$error" ng-if="eventsForm.events.$touched && eventsForm.events.$invalid"></invalid-directive>
+                        </div>
+                    </div>
+                    <div class="container h-divider"></div>
+                    <div class="form-group">
+                        <div class="col-lg-12 col-md-12 col-sm-12  col-xs-12 ">
+                            <text-area-directive placeholder="{{eventsForm.event_disc}}" ng-model="eventsForm.event_disc" name="discription" id="discription"></text-area-directive>
+                        </div>
+                    </div>
+                    <div class="container h-divider"></div>
+
+                    <div class="form-group">
+                        <div class="col-lg-12 col-md-12 col-sm-12  col-xs-12 ">
+                            <datepicker date-format="yyyy-MM-dd" date-min-limit="{{today}}" selector="form-control">
+
+                                <div class="input-group">
+                                    <input class="form-control" ng-model="eventsForm.date_time" placeholder="{{eventsForm.date_time}} " />
+                                    <span class="input-group-addon" style="cursor: pointer">
+                <i class="fa fa-lg fa-calendar"></i>
+              </span>
+                                </div>
+                            </datepicker>
+                        </div>
+                    </div>
+                    <div class="container h-divider"></div>
+
+                    <div class="form-group">
+                        <div class="col-lg-12 col-md-12 col-sm-12  col-xs-12 ">
+
+                            <datepicker date-format="yyyy-MM-dd" date-min-limit="{{eventsForm.date_time}}" selector="form-control">
+                                <div class="input-group">
+                                    <input class="form-control" ng-model="eventsForm.end_time" placeholder="{{eventsForm.end_time}}" />
+                                    <span class="input-group-addon" style="cursor: pointer">
+        <i class="fa fa-lg fa-calendar"></i>
+        </span>
+                                </div>
+                            </datepicker>
+
+                        </div>
+                    </div>
+                    <div class="container h-divider"></div>
+
+                    <div class="form-group">
+                        <div class="col-lg-12 col-md-12 col-sm-12  col-xs-12 ">
+                            <datepicker date-format="yyyy-MM-dd" date-min-limit="{{eventsForm.end_time}}" selector="form-control">
+                                <div class="input-group">
+                                    <input class="form-control" ng-model="eventsForm.sub_end" placeholder="{{eventsForm.sdtdate}}" />
+                                    <span class="input-group-addon" style="cursor: pointer">
+        <i class="fa fa-lg fa-calendar"></i>
+        </span>
+                                </div>
+                            </datepicker>
+                        </div>
+                    </div>
+                    <div class="container h-divider"></div>
+
+
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <span ng-show=" isNew "><button type="button" ng-click="close()" class="btn btn-success" data-dismiss="modal"><spna class="glyphicon glyphicon-plus"></spna>Add</button></span>
+                <span ng-show=" !isNew  "><button type="button" ng-click="close()" class="btn btn-success" data-dismiss="modal"><spna class="glyphicon glyphicon-pencil"></spna>Update</button></span>
+                <button type="button" ng-click="cancel()" class="btn btn-danger"><spna class="glyphicon glyphicon-remove"></spna> Cancel</button> </div>
+        </div>
+    </div>
+</div>

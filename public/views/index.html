@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html ng-app="cmsApp">
+
+<head>
+
+    <baser href='/'>
+        <title>| Team Alpha :: CMS :: HOME |</title>
+        <meta name="google-site-verification" content="v49zRel1caWa0cyBU9ghGBrrTDnrQERQPVHOqy4E2-0" />
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="google-signin-client_id" content="'449868292098-843m5i48ls8v7nv5met6dpfi461o8t6d.apps.googleusercontent.com">
+
+        <link rel="shortcut icon" href="/assets/logo.png" type="image/png" />
+        <!--styles-->
+        <!--bootswatch theme-->
+        <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css">
+        <link href="/lib/angularjs-datepicker/dist/angular-datepicker.min.css" rel="stylesheet" type="text/css" />
+
+        <!--scripts freame work -->
+        <!--jquery-->
+        <script src="/lib/jquery/dist/jquery.min.js"></script>
+
+        <script src="/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+
+
+        <!--styles-->
+        <!--angular bootstrap datapicker css-->
+
+        <!--2 4 5-->
+        <link rel="stylesheet" href="/styles/bootstrap.min2.css">
+
+
+        <link rel="stylesheet" href="/styles/font-awesome.min.css">
+
+        <!--freame work scripts-->
+
+        <!--moment-js-->
+        <script type="text/javascript" src="/lib/moment/moment.js"></script>
+
+        <!--angularJs-->
+        <script type="text/javascript" src="/lib/angular/angular.js"></script>
+
+        <!--angular-route-->
+        <script type="text/javascript" src="/lib/angular-route/angular-route.min.js"></script>
+        <!--angular-messages-->
+        <script src="/lib/angular-animate/angular-animate.min.js"></script>
+        <!--angular-resource-->
+        <script src="/lib/angular-resource/angular-resource.min.js"></script>
+        <!--angular-messages-->
+        <script src="/lib/angular-messages/angular-messages.min.js"></script>
+        <script src=" /lib/angular-modal-service/dst/angular-modal-service.js"></script>
+        <script src=" /lib/ng-file-upload/dist/ng-file-upload.min.js"></script>
+        <script src=" /lib/ng-file-upload/dist/ng-file-upload.min.js"></script>
+
+        <script src="/lib/angularjs-datepicker/dist/angular-datepicker.min.js"></script>
+
+        <!--socket.io-->
+        <!--<script type="text/javascript" src="/lib/socket.io/lib/socket.js"></script>-->
+
+        <!--google plus sdk-->
+        <script type="text/javascript" src="/lib/angular-google-plus/dist/angular-google-plus.min.js"></script>
+        <!--face-book sdk-->
+        <script type="text/javascript" src="/scripts/angular-facebook/lib/angular-facebook.js"></script>
+
+
+        <!--custom scripts-->
+        <!--Services -->
+        <script type="text/javascript" src="/scripts/services/sessionService.js"></script>
+        <script type="text/javascript" src="/scripts/services/profileService.js"></script>
+        <script type="text/javascript" src="/scripts/services/eventsService.js"></script>
+
+
+        <!-- Controllers -->
+        <script type="text/javascript" src="/scripts/controllers/mainController.js"></script>
+        <script type="text/javascript" src="/scripts/controllers/profileController.js"></script>
+        <script type="text/javascript" src="/scripts/controllers/eventsController.js"></script>
+        <script type="text/javascript" src="/scripts/controllers/usersController.js"></script>
+
+
+        <!-- Directives -->
+        <script type="text/javascript" src="/scripts/directives/formDirectives.js"></script>
+        <script type="text/javascript" src="/scripts/directives/reverse.js"></script>
+
+
+        <!--main app module scripts-->
+        <script type="text/javascript" src="../routes.js"></script>
+
+        <script type="text/javascript" src="../app.js"></script>
+
+        <link rel="stylesheet" href="/styles/style.css">
+
+        <!--<li> <img ng-src="{{userImage}}" class="img-responsive bordered user-profile-image  " alt="{{userName}}"></li>-->
+
+</head>
+
+
+<body ng-controller="MainController as main">
+
+    <!--the nav bar and header content lies here-->
+    <header ng-if="loggedIn">
+        <nav class="navbar navbar-default navbar-fixed-top container bordered round" role="navigation">
+
+            <!--container-fluid starts here-->
+            <div class="container-fluid ">
+
+                <!--navbar toogle button  (navbar-header) starts here-->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-ta-navbar-collapse-2">
+                              <span class="sr-only">Toggle navigation</span>
+                              <span class="icon-bar"></span>
+                              <span class="icon-bar"></span>
+                              <span class="icon-bar"></span>
+      </button>
+                    <!--<a class="navbar-brand" href="#">{{userName}}</a>-->
+
+                    <a class=" hidden-sm hidden-xs navbar-brand col-sm-0 col-xs-0 margined-30" href="/"><img ng-src="/assets/logo.png" class="img-responsive bordered logo  bg-primary" alt="TemaAlpha"></a>
+                    <a class="hidden-lg   hidden-md navbar-brand" href="#"><img ng-src="/assets/logo.png" class="img-responsive bordered logo-small  bg-primary" alt="TemaAlpha"></a>
+
+                    <a class="navbar-brand" href="#"></a>
+                    <a class="navbar-brand" href="#"></a>
+                </div>
+                <!--navbar toogle button (navbar-header) ends   here-->
+
+                <!--navebar-collapse starts here-->
+                <div class="collapse navbar-collapse" id="bs-ta-navbar-collapse-2">
+                    <ul class="nav navbar-nav">
+                        <!--add more content here  -->
+                    </ul>
+                    <div class="row h-divider  hidden-sm hidden-xs"></div>
+                    <!--right side content of the side bar-->
+                    <ul class="nav navbar-nav  navbar-right ">
+
+                        <li class="  col-sm-0 col-xs-0  btn-default">
+                            <a href="/profile" class="nav-bar-container">
+
+                                <span ng-controller="ProfileController as prf">
+                                <img ng-src="{{prf.userProfileImage}}" class="img-responsive bordered user-profile-image" id="profileImage" alt="{{prf.userName}}">
+                                </span>
+
+                            </a>
+                        </li>
+
+                        <li class="btn btn-info bordered mar  margined-10" style="border-right: none;"><a href="#">Notification <span class="badge">42</span></a></li>
+
+                        <li class="btn btn-warning  bordered   margined-10" style="border-left: none;border-right: none;"><a href="#">Messages <span class="badge ">3</span></a></li>
+
+                        <li class=" btn btn-danger  bordered  margined-10" style="border-left: none;"><a href="#" ng-click="main.doLogout() ">Logout <span class="glyphicon glyphicon-lock"></span></a></li>
+                    </ul>
+                    <!--right side content ends here-->
+                    <!--the serach bar input starts here-->
+                    <form class="navbar-form navbar-left has-warning  margined-form-30 col-lg-offset-3" role="search">
+                        <div class=" form-group ">
+                            <div class="form-group has-feedback ">
+
+                                <input type="text " class="form-control " ng-model="main.searchKeyword " placeholder="Search... " />
+                                <span class="glyphicon glyphicon-search form-control-feedback " ng-click="main.searchKeyword=null "></span>
+                            </div>
+                        </div>
+                    </form>
+                    <!--the search bar form ends here-->
+
+                </div>
+                <!--navebar-collapse starts here-->
+
+                <div class="row h-divider  hidden-sm hidden-xs "></div>
+            </div>
+            <!--container fluide ends here-->
+        </nav>
+    </header>
+    <!--header ends here-->
+
+    <!--main content starts here-->
+    <main>
+        <div ng-view></div>
+
+
+
+    </main>
+    <!--main content ends here-->
+
+
+</body>
+
+
+
+
+</html>

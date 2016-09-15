@@ -1,0 +1,124 @@
+<div class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header "> <button type="button" class="close" ng-click="close()" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <div class="modal-title">
+                    <span class=" pull-left">
+                        <i class="fa fa-tasks  fa-4x hidden-xs hidden-sm" aria-hidden="true"></i> </span>
+                    <h2 class="text-center  hidden-xs hidden-sm">{{title}}</h2>
+
+                    <span class=" pull-left">
+                        <i class="fa fa-tasks  fa-2x hidden-lg hidden-md" aria-hidden="true"></i> </span>
+                    <h6 class="text-center hidden-lg hidden-md">{{title}}</h6>
+                </div>
+            </div>
+            <div class="modal-body">
+                <div ng-show="selected" class="alert alert-dismissible alert-info">
+
+                    <button type="button" class="close" ng-click=" removeallList()">&times;</button>
+                    <h6>Send email to:</h6>
+
+                    <div class="container h-divider"></div>
+                    <ul class="pagination" ng-repeat="email in selectedEmails">
+                        <li><a href="#" class=" small-text bg-primary">{{email.email}} <span  class="glyphicon glyphicon-remove close-button" ng-click="removeSelectedEmail(email.email)"> </span></a></li>
+                    </ul>
+                    <div class="container h-divider"></div>
+                    <button class="btn btn-warning bordered" ng-click="send() " title="Send Conference/Event Invitation">
+                    <span class="glyphicon glyphicon-envelope"></span> Send Invitation</button>
+
+                </div>
+
+                <table class="table table-responsive table-striped table-hover hidden-sm hidden-xs">
+                    <thead>
+                        <tr class="info ">
+                            <th class="text-center ">#</th>
+                            <th class="text-center ">Email</th>
+                            <th class="text-center ">Full Name</th>
+
+
+                            <th>
+                                <!--<form class=" " role="search ">-->
+                                <div class="col-xs-6">
+                                    <form class="navbar-form navbar-left has-warning  margined-30 col-lg-offset-3" role="search">
+                                        <div class=" form-group ">
+                                            <div class="form-group has-feedback ">
+
+                                                <input type="text " class="form-control " ng-model="searchusr " placeholder="Search... " />
+                                                <span class="glyphicon glyphicon-search form-control-feedback " ng-click="main.searchKeyword=null "></span>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                                <!--<div class=" form-group ">
+                                        <div class="form-group has-feedback ">
+                                            <input type="text " class="form-control " ng-model=" searchusr " placeholder="Search... " />
+                                         </div>
+                                    </div>-->
+                                <!--</form>-->
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="user in  Allusers | filter: searchusr ">
+                            <td class="text-center "> <img ng-src="{{user.image}} " class="img-responsive bordered user-profile-image center-block text-center " alt="{{user._id}} "></td>
+
+                            <td class="text-center ">{{user.email}}</td>
+                            <td class="text-center ">{{user.full_name}} {{user.active}}</td>
+
+
+                            <td class="text-center ">
+
+                                <button class="btn btn-info " ng-click="selectUser(user.email)" title="Select contributer"><span class="glyphicon glyphicon-check "> </button>
+
+
+                            </td>
+                        </tr>
+
+
+                    </tbody>
+                </table>
+
+                <table class="table table-responsive table-striped table-hover hidden-lg hidden-md ">
+                    <thead>
+                        <tr class="info ">
+                            <th class="text-center ">
+                                <form class="navbar-form navbar-left has-warning   col-xs-12 col-sm-12  " role="search">
+                                    <div class=" form-group ">
+                                        <div class="form-group has-feedback ">
+
+                                            <input type="text " class="form-control " ng-model="searchusr " placeholder="Search... " />
+                                            <span class="glyphicon glyphicon-search form-control-feedback "></span>
+                                        </div>
+                                    </div>
+                                </form>
+                                <div class="col-xs-12 col-sm-12">Users</div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="user in Allusers | filter: searchusr ">
+                            <td class="text-center ">
+                                <img ng-src="{{user.image}} " class="img-responsive bordered user-profile-image center-block text-center " alt="{{user._id}} ">
+                                <div class="container h-divider "></div>
+                                Email: {{user.email}}
+                                <div class="container h-divider "></div>
+                                Full Name: {{user.full_name}}
+                                <div class="container h-divider "></div>
+
+
+                                <button class="btn btn-info " ng-click="selectUser(user.email)" title="Select contributer"><span class="glyphicon glyphicon-check "> </button>
+
+                            </td>
+                        </tr>
+
+
+                    </tbody>
+                </table>
+
+
+            </div>
+            <div class="modal-footer ">
+                <button type="button " ng-click="cancel() " class="btn btn-danger "><spna class="glyphicon glyphicon-remove "></spna> Cancel</button> </div>
+        </div>
+    </div>
+</div>
